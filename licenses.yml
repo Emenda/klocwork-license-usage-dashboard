@@ -1,0 +1,8 @@
+# FlexLM Licenses to be monitored.
+---
+licenses:
+  - name: Klocwork
+    license_server: <port>@<host>
+    features_to_include: fixserver2018,fixserver2019,fixclient2018,fixclient2019,reviewclient2018,reviewclient2019,kwciagent,concserver2018,concserver2019,webapi.compliance,all_languages2018,all_languages2019,cxx2018,cxx2019,java2018,java2019,csharp2018,csharp2019,kwadmin2018,kwadmin2019,kwbuildproject2018,kwbuildproject2019,kwstructure101,cxx2017,java2017,csharp2017,review2019,review2018,review2017,kwcheck2018,kwcheck2019,plugin.eclipse2018,plugin.eclipse2019,plugin.idea2018,plugin.idea2019,plugin.msvs2018,plugin.msvs2019,kwcheck2017,plugin.eclipse2017,plugin.idea2017,plugin.msvs2017,kwadmin2017,kwbuildproject2017 
+    monitor_users: True
+    monitor_reservations: True
