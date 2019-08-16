@@ -2,6 +2,7 @@
 A Grafana-based dashboard for monitoring Klocwork license usage. Prometheus is used as the data provider. FlexLM Exporter periodically runs lmstat and sends data to Prometheus.
 
 ## Requirements
+- NOTE: The FLexLM Exporter currently builds only on Linux. Windows builds are a WIP. You will need to modify the Makefile to build in Windows.
 - Go - https://golang.org/
 - FlexLM Exporter (Emenda Fork) - https://github.com/Emenda/flexlm_exporter 
 - Prometheus - https://prometheus.io/
