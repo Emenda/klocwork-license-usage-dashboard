@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 6,
   "links": [],
   "panels": [
     {
@@ -130,9 +130,52 @@
       "fontSize": "80%",
       "format": "short",
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 7,
+        "w": 6,
         "x": 12,
+        "y": 0
+      },
+      "id": 16,
+      "interval": null,
+      "legend": {
+        "percentage": false,
+        "show": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "pie",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "expr": "flexlm_feature_used_users{name=~\"fixserver2018|fixserver2019\"}",
+          "legendFormat": "{{user}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Fixed Server License Users",
+      "type": "grafana-piechart-panel",
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 59,
+        "w": 6,
+        "x": 18,
         "y": 0
       },
       "id": 14,
@@ -158,6 +201,49 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "User License Users",
+      "type": "grafana-piechart-panel",
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "fontSize": "80%",
+      "format": "short",
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 12,
+        "y": 7
+      },
+      "id": 19,
+      "interval": null,
+      "legend": {
+        "percentage": false,
+        "show": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "options": {},
+      "pieType": "pie",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "expr": "flexlm_feature_used_users{name=~\"concserver2018|concserver2019\"}",
+          "legendFormat": "{{user}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Concurrent Server License Users",
       "type": "grafana-piechart-panel",
       "valueName": "current"
     },
@@ -268,47 +354,89 @@
       }
     },
     {
-      "aliasColors": {},
-      "breakPoint": "50%",
       "cacheTimeout": null,
-      "combine": {
-        "label": "Others",
-        "threshold": 0
+      "colorBackground": true,
+      "colorPostfix": false,
+      "colorPrefix": false,
+      "colorValue": false,
+      "colors": [
+        "#F2495C",
+        "#73BF69",
+        "#73BF69"
+      ],
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
       },
-      "fontSize": "80%",
-      "format": "short",
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 4,
+        "w": 2,
         "x": 12,
-        "y": 8
+        "y": 14
       },
-      "id": 16,
+      "id": 18,
       "interval": null,
-      "legend": {
-        "percentage": false,
-        "show": true,
-        "values": true
-      },
-      "legendType": "Right side",
       "links": [],
-      "maxDataPoints": 3,
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
       "nullPointMode": "connected",
+      "nullText": null,
       "options": {},
-      "pieType": "pie",
-      "strokeWidth": 1,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
       "targets": [
         {
-          "expr": "flexlm_feature_used_users{name=~\"fixserver2018|fixserver2019\"}",
-          "legendFormat": "{{user}}",
+          "expr": "flexlm_server_status{app=\"Klocwork\"}",
+          "legendFormat": "Server Status",
           "refId": "A"
         }
       ],
+      "thresholds": "1",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Server License Users",
-      "type": "grafana-piechart-panel",
-      "valueName": "current"
+      "title": "Server Status",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
     },
     {
       "aliasColors": {},
@@ -609,5 +737,5 @@
   "timezone": "",
   "title": "Klocwork License Usage",
   "uid": "4etf3OOZz",
-  "version": 15
+  "version": 3
 }
