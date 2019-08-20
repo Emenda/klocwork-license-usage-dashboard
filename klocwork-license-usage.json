@@ -152,6 +152,7 @@
       "targets": [
         {
           "expr": "flexlm_feature_used_users{name=~\"fixserver2018|fixserver2019\"}",
+          "instant": true,
           "legendFormat": "{{user}}",
           "refId": "A"
         }
@@ -194,6 +195,7 @@
       "targets": [
         {
           "expr": "flexlm_feature_used_users{name=~\"fixclient2018|fixclient2019|reviewclient2018|reviewclient2019\"}",
+          "instant": true,
           "legendFormat": "{{user}}",
           "refId": "A"
         }
@@ -717,7 +719,7 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
@@ -737,5 +739,5 @@
   "timezone": "",
   "title": "Klocwork License Usage",
   "uid": "4etf3OOZz",
-  "version": 5
+  "version": 6
 }
